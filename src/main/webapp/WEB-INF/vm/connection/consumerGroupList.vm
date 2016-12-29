@@ -13,9 +13,9 @@
     					<tr>
 						  <td>$tr[0]</td>
 						  <td> 
-							<button class="btn btn-sm btn-info" type="button" onclick="stat('$tr[0]')">消费者连接</button>
+							<button class="btn btn-sm btn-info" type="button" onclick="stat('$tr[0]')">connection</button>
 							&nbsp;&nbsp;  
-							<button class="btn btn-sm btn-info" type="button" onclick="progress('$tr[0]')">消费进度</button>
+							<button class="btn btn-sm btn-info" type="button" onclick="progress('$tr[0]')">progress</button>
 							&nbsp;&nbsp;     	    							
 						  </td>
         				</tr>
