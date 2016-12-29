@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.alibaba.rocketmq.common.Table;
 import com.alibaba.rocketmq.common.protocol.body.ConsumerConnection;
 import com.alibaba.rocketmq.common.protocol.body.ProducerConnection;
 import com.alibaba.rocketmq.service.ConnectionService;
@@ -59,7 +60,19 @@ public class ConnectionAction extends AbstractAction {
         }
         return TEMPLATE;
     }
-
+    
+	@RequestMapping(value = "/consumerGroupList.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String onlineConsumerGroupList(ModelMap map, HttpServletRequest request,
+			@RequestParam(required = false) String consumerGroup) {
+		putPublicAttribute(map, "consumerGroupList");
+		try {
+			Table table = connectionService.getOnlineConsumerGroupList();
+			putTable(map, table);
+		} catch (Throwable t) {
+			putAlertMsg(t, map);
+		}
+		return TEMPLATE;
+	}
 
     @RequestMapping(value = "/producerConnection.do", method = { RequestMethod.GET, RequestMethod.POST })
     public String producerConnection(ModelMap map, HttpServletRequest request,

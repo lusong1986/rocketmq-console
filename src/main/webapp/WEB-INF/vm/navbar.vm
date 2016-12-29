@@ -11,6 +11,7 @@
                             <li class="dropdown $!connection_flag" >
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Connection<b class="caret"></b></a>
                                  <ul class="dropdown-menu">
+                                 	<li><a href="$root/connection/consumerGroupList.do">Online Consumer Groups</a></li>
                                     <li><a href="$root/connection/consumerConnection.do">ConsumerConnection</a></li>
                                     <li><a href="$root/connection/producerConnection.do">ProducerConnection</a></li>
                                  </ul>
